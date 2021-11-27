@@ -16,9 +16,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from rest_framework_simplejwt.views import (TokenObtainPairView, TokenRefreshView)
-from ms2App import views
+from ms2App.views import *
+from ms2App.views.skillsCreateView import SkillsCreateView
+from ms2App.views.skillsDeleteView import SkillsDeleteView
+from ms2App.views.skillsDetailView import SkillsDetailView
+from ms2App.views.skillsUpdateView import SkillsUpdateView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('skills/', views.SkillsView.as_view()),
+    path('skills/detail', SkillsDetailView.as_view()),
+    path('skills/create', SkillsCreateView.as_view()),
+    path('skills/update', SkillsUpdateView.as_view()),
+    path('skills/delete', SkillsDeleteView.as_view()),
 ]
