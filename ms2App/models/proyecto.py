@@ -1,16 +1,14 @@
-from typing import Dict
 from django import forms
-from django.db.models import fields
-from  djongo import models
-
+from djongo import models
 
 
 class Tecnologia (models.Model):
-    nombre = models.CharField(max_length= 100)
-    version = models.CharField(max_length= 100)
+    nombre = models.CharField(max_length=100, primary_key=True)
+    version = models.CharField(max_length=100)
 
     class Meta:
-        abstract = True
+        managed = False
+
 
 class TecnologiaForm(forms.ModelForm):
     class Meta:
@@ -19,12 +17,14 @@ class TecnologiaForm(forms.ModelForm):
             'nombre', 'version'
         )
 
+
 class Duracion (models.Model):
-    inicio = models.CharField(max_length=2000)
+    inicio = models.CharField(max_length=2000, primary_key=True)
     fin = models.CharField(max_length=2000)
 
     class Meta:
-        abstract = True
+        managed = False
+
 
 class DuracionForm(forms.ModelForm):
     class Meta:
@@ -32,11 +32,14 @@ class DuracionForm(forms.ModelForm):
         fields = (
             'inicio', 'fin'
         )
+
+
 class Enlaces (models.Model):
-    enlace = models.CharField(max_length=2000)
+    enlace = models.CharField(max_length=2000, primary_key=True)
 
     class Meta:
-        abstract = True
+        managed = False
+
 
 class EnlacesForm(forms.ModelForm):
     class Meta:
@@ -44,6 +47,8 @@ class EnlacesForm(forms.ModelForm):
         fields = (
             'enlace',
         )
+
+
 class Proyectos (models.Model):
     nombreProyecto = models.CharField(max_length=300)
     tecnologiasUsadas = models.ArrayField(
@@ -60,5 +65,5 @@ class Proyectos (models.Model):
         model_container=Enlaces,
         model_form_class=EnlacesForm
     )
-    usuario = models.CharField(max_length=300)
+    usuario = models.IntegerField()
     objects = models.DjongoManager

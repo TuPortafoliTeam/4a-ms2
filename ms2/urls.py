@@ -17,7 +17,6 @@ urlpatterns = [
     path('ms2App/', include('ms2App.urls')),
     path('perfil/<int:pk>', PerfilRUDView.as_view()),
     path('perfil', PerfilCreateView.as_view()),
-
     path('cover/detail', CoverDetailView.as_view()),
     path('cover/create', CoverCreateView.as_view()),
     path('cover/update', CoverUpdateView.as_view()),

@@ -1,10 +1,17 @@
-from django.db import models
+from djongo import models
 
-class perfilEmpresa(models.Model):
-    
-    idPerfilEmpresa= models.BigAutoField(primary_key=True)
+
+class Vacante(models.Model):
+    nombre = models.CharField(max_length=100, primary_key=True)
+    requerimientos = models.TextField()
+
+    class Meta:
+        managed = False
+
+
+class PerfilEmpresa(models.Model):
     sector = models.CharField(max_length=50)
-    vacantes = models.CharField(max_length=200)
+    vacantes = models.ArrayField(model_container=Vacante)
     calificacion = models.IntegerField()
-    añoCreacion = models.TimeField
-    Usuario = models.CharField(max_length=50)
+    añoCreacion = models.CharField(max_length=4)
+    usuario = models.CharField(max_length=50, primary_key=True)
