@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
     'django_filters',
     'ms2App',
     'corsheaders',
+    'correoApp',
     'djongo'
 ]
 
@@ -72,7 +74,7 @@ ROOT_URLCONF = 'ms2.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS':[os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -80,6 +82,10 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
+                'full_url.context_processors.UrlParts',
+                'django.template.context_processors.i18n',
+                #"module.context_processors.site",
             ],
         },
     },
@@ -145,3 +151,11 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# # Email Config - Datos para el servicio de envio de correos
+EMAIL_HOST = 'smtp.gmail.com' #get_secret('EMAIL_HOST')
+EMAIL_HOST_USER = 'correo'  #get_secret('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = 'claveee' #get_secret('EMAIL_HOST_PASSWORD')
+EMAIL_PORT = 587   #get_secret('EMAIL_PORT')
+EMAIL_USE_TLS =  True   #get_secret('EMAIL_USE_TLS')
