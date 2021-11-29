@@ -21,6 +21,9 @@ class EnlacesSerializer(serializers.ModelSerializer):
 
 
 class ProyectoSerializer(serializers.ModelSerializer):
+    tecnologiasUsadas = [TecnologiaSerializer()]
+    id = serializers.CharField(read_only=True)
+
     class Meta:
         model = Proyectos
         fields = '__all__'

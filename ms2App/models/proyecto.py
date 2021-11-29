@@ -50,6 +50,7 @@ class EnlacesForm(forms.ModelForm):
 
 
 class Proyectos (models.Model):
+    _id = models.ObjectIdField()
     nombreProyecto = models.CharField(max_length=300)
     tecnologiasUsadas = models.ArrayField(
         model_container=Tecnologia,

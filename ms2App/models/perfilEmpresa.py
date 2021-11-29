@@ -13,5 +13,5 @@ class PerfilEmpresa(models.Model):
     sector = models.CharField(max_length=50)
     vacantes = models.ArrayField(model_container=Vacante)
     calificacion = models.IntegerField()
-    añoCreacion = models.CharField(max_length=4)
+    anioCreacion = models.CharField(max_length=4)
     usuario = models.CharField(max_length=50, primary_key=True)

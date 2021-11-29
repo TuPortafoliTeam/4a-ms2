@@ -10,7 +10,6 @@ class CoverCreateView(generics.CreateAPIView):
 
     queryset = Cover.objects.all()
     serializer_class = CoverSerializer
-    permission_classes = (IsAuthenticated,)
 
     def post(self, request, *args, **kwargs):
 
