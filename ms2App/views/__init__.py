@@ -1,0 +1,1 @@
+from .proyectoView import proyecto_view,proyecto_detail_view
