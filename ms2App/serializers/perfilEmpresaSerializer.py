@@ -12,4 +12,4 @@ class PerfilEmpresaSerializer(serializers.ModelSerializer):
     class Meta:
         model = PerfilEmpresa
         fields = ['vacantes',
-                  'calificacion', 'añoCreacion', 'usuario']
+                  'calificacion', 'anioCreacion', 'usuario']

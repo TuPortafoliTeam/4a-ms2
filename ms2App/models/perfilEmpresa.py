@@ -14,4 +14,4 @@ class PerfilEmpresa(models.Model):
     vacantes = models.ArrayField(model_container=Vacante)
     calificacion = models.IntegerField()
     anioCreacion = models.CharField(max_length=4)
-    usuario = models.CharField(max_length=50, primary_key=True)
+    usuario = models.IntegerField(primary_key=True)
