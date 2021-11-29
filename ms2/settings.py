@@ -59,9 +59,6 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.AllowAny',
     ),
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-    ),
     'DEFAULT_FILTER_BACKENDS': [
         'rest_framework.filters.SearchFilter',
         'rest_framework.filters.OrderingFilter',
@@ -99,7 +96,7 @@ DATABASES = {
         'NAME': 'tuportafolio',
         'ENFORCE_SCHEMA': False,
         'CLIENT': {
-                'host': 'mongodb+srv://tuportafolio:Mintic2022@jpcluster0.78el5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+                'host': 'mongodb+srv://tuportafolio:Mintic2022@jpcluster0.78el5.mongodb.net/tuportafolio?retryWrites=true&w=majority'
         },
     }
 }
