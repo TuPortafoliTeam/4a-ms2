@@ -6,3 +6,4 @@ from ms2App.serializers import PerfilEmpresaSerializer
 class PerfilEmpresaRUDView(generics.RetrieveUpdateDestroyAPIView):
     queryset = PerfilEmpresa.objects.all()
     serializer_class = PerfilEmpresaSerializer
+    lookup_field = 'usuario'
