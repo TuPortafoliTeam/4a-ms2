@@ -20,9 +20,10 @@ class Trabajo(models.Model):
 
 
 class Perfil(models.Model):
-    descripcion = models.TextField()
-    metodologia = models.TextField()
-    formacion = models.ArrayField(model_container=Formacion)
-    trabajo = models.ArrayField(model_container=Trabajo)
-    intereses = models.TextField()
+    descripcion = models.TextField(null=True, blank=True)
+    metodologia = models.TextField(null=True, blank=True)
+    formacion = models.ArrayField(
+        model_container=Formacion, null=True, blank=True)
+    trabajo = models.ArrayField(model_container=Trabajo, null=True, blank=True)
+    intereses = models.TextField(null=True, blank=True)
     usuario = models.IntegerField(null=False, blank=False, primary_key=True)

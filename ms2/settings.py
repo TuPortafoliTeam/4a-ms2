@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-gl$z93x3ntd8$8(g@&g!s1=9^-2jox!nm#dc*m!(0cdh-8(x&0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 CORS_ALLOW_ALL_ORIGINS = True
 
@@ -41,8 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'django_filters',
-    'ms2App',
     'corsheaders',
+    'ms2App',
     'correoApp',
     'djongo'
 ]
